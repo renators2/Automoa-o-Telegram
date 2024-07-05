@@ -1,0 +1,17 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+
+navegador=webdriver.Chrome()
+link="https://web.telegram.org/"
+navegador.get(link)
+
+import time
+time.sleep(5)
+navegador.find_element(By.PARTIAL_LINK_TEXT, """Renato""").click()
+navegador.find_element(By.XPATH, """//*[@id="column-center"]/div/div/div[4]/div/div[1]/div/div[8]/div[1]/div[1]""").click()
+navegador.find_element(By.XPATH, """//*[@id="column-center"]/div/div/div[4]/div/div[1]/div/div[8]/div[1]/div[1]""").send_keys("Boa tarde Renato, você ta bem?")
+#navegador.find_element(By.XPATH, """//*[@id="column-center"]/div/div/div[4]/div/div[5]/button/div""").click()
+
+#Para whatsapp utilize
+"""   link = f"https://web.whatsapp.com/send?phone={telefone}&text={texto} """
